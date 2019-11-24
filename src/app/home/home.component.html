@@ -1,10 +1,43 @@
 <div class="container"
-     fxLayout="row"
+     fxLayout="column"
      fxLayout.sm="column"
      fxLayout.xs="column"
      fxLayoutAlign.gt-mat="space-around center"
      fxLayoutGap="10px"
      dir="rtl">
+
+<div class="container"
+fxLayout="column"
+fxLayoutGap="10px"
+dir="rtl">
+
+  <div fxFlex>
+    <div>
+    <h3>در تمامی این بازار ها همراه شما هستیم</h3>
+    <hr>
+    </div>
+  </div>
+
+  <div fxFlex *ngIf="plans" [@expand]>
+    <mat-grid-list cols="3" rowHeight="300px" >
+    <mat-grid-tile *ngFor="let plan of plans" [routerLink]="['/plandetail', plan.id]" appHighlight>
+      <img height="200px" src="{{BaseURL + plan.image}}" alt={{plan.name}}>
+      <mat-grid-tile-footer>
+        <h1 mat-line>{{plan.name | uppercase}}</h1>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div [hidden]="plans || errMess">
+    <mat-spinner></mat-spinner><h4>در حال بارگذاری ... </h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+</div>
+
+
 <!--
   <mat-card *ngIf="plans" fxFlex [@expand]>
     <mat-card-header>
@@ -72,36 +105,3 @@
 
 </div>
 -->
-
-
-
-<div class="container"
-fxLayout="column"
-fxLayoutGap="10px"
-dir="rtl">
-
-  <div fxFlex>
-    <div>
-    <h3>در تمامی این بازار ها همراه شما هستیم</h3>
-    <hr>
-    </div>
-  </div>
-
-  <div fxFlex *ngIf="plans" [@expand]>
-    <mat-grid-list cols="3" rowHeight="300px" >
-    <mat-grid-tile *ngFor="let plan of plans" [routerLink]="['/plandetail', plan.id]" appHighlight>
-      <img height="200px" src="{{BaseURL + plan.image}}" alt={{plan.name}}>
-      <mat-grid-tile-footer>
-        <h1 mat-line>{{plan.name | uppercase}}</h1>
-      </mat-grid-tile-footer>
-    </mat-grid-tile>
-    </mat-grid-list>
-  </div>
-  <div [hidden]="plans || errMess">
-    <mat-spinner></mat-spinner><h4>در حال بارگذاری ... </h4>
-  </div>
-  <div *ngIf="errMess">
-    <h2>Error</h2>
-    <h4>{{errMess}}</h4>
-  </div>
-</div>

@@ -51,6 +51,8 @@ export class FlowComponent implements AfterViewInit {
 
   ngAfterViewInit() {
 
+    
+
 
     var container = $('#chart_container');
     this.cx = $('#exampleDiv').width() / 2;
@@ -74,8 +76,7 @@ export class FlowComponent implements AfterViewInit {
 
     });
 
-
-    setTimeout(() => {
+    setTimeout(() => { 
       $(this.exampleDiv.nativeElement).flowchart({
         data: '',
         multipleLinksOnOutput: true,
