@@ -37,6 +37,8 @@ import { baseURL } from './shared/baseurl';
 import { RestangularConfigFactory } from './shared/restConfig';
 import { HighlightDirective } from './directives/highlight.directive';
 import { PlandetailComponent } from './plandetail/plandetail.component';
+import { TradingviewComponent } from './tradingview/tradingview.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { PlandetailComponent } from './plandetail/plandetail.component';
     ContactComponent,
     LoginComponent,
     HighlightDirective,
-    PlandetailComponent
+    PlandetailComponent,
+    TradingviewComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
