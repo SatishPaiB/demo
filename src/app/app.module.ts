@@ -39,6 +39,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { PlandetailComponent } from './plandetail/plandetail.component';
 import { TradingviewComponent } from './tradingview/tradingview.component';
 import { NewsComponent } from './news/news.component';
+import { ShopComponent } from './shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { NewsComponent } from './news/news.component';
     HighlightDirective,
     PlandetailComponent,
     TradingviewComponent,
-    NewsComponent
+    NewsComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
