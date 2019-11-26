@@ -1,1 +1,31 @@
-<p>news works!</p>
+<div class="container"
+fxLayout="column"
+fxLayoutGap="10px"
+dir="rtl">
+
+  <div fxFlex>
+    <div>
+      <!--<h3>شما میتوانید با مطالعه و انتخاب هر یک از پلن های زیر، مناسب ترین گزینه برای خود را انتخاب نمایید</h3>-->
+      <h3>استراتژی مورد نظر خود را انتخاب نموده و بر روی داده های پیشین بازار تست نمایید</h3>
+    <hr>
+    </div>
+  </div>
+
+  <div fxFlex *ngIf="shops" [@expand]>
+    <mat-grid-list cols="1" rowHeight="200px">
+    <mat-grid-tile *ngFor="let shop of shops" [routerLink]="['/shopdetail', shop.id]" appHighlight>
+      <img height="200px" src="{{BaseURL + shop.image}}" alt={{shop.name}}>
+      <mat-grid-tile-footer>
+        <!--<h1 mat-line>{{shop.name | uppercase}}</h1>-->
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div [hidden]="shops || errMess">
+    <mat-spinner></mat-spinner><h4>در حال بارگذاری ... </h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+</div>

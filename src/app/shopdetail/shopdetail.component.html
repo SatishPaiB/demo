@@ -7,46 +7,35 @@ fxLayoutGap="10px"
 fxLayoutGap.xs="0"
 dir="rtl">
 
-  <div fxFlex *ngIf="market" [@visibility]="visibility" dir="rtl">
+  <div fxFlex *ngIf="shop" [@visibility]="visibility" dir="rtl">
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          <!--<h3>{{market.name | uppercase}}</h3>-->
+          <!--<h3>{{shop.name | uppercase}}</h3>-->
         </mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="{{BaseURL + market.image}}" alt={{market.name}}>
+      <img mat-card-image src="{{BaseURL + shop.image}}" alt={{shop.name}}>
       <mat-card-content>
-        <p>{{market.description}}
+        <p>{{shop.description}}
         </p>   
       </mat-card-content>
       <mat-card-actions>
-
-          <div>
-              <button md-button style="width:48%; height:100px; float: right;    background-color: rgb(41, 126, 238);
-              color: white; font-size: 50px; font-family: Georgia, 'Times New Roman', Times, serif;">تست استراتژی</button>
-              <button md-button style="width:48%; height:100px; float: left;    background-color: rgb(0, 185, 231);
-              color: white; font-size: 50px; font-family:Georgia, 'Times New Roman', Times, serif ;" >خرید استراتژی</button>
-          </div>
- <!--
-        <button mat-button [routerLink]="['/marketdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
+        <button mat-button [routerLink]="['/shopdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
         <button mat-button (click)="goBack()">بازگشت</button>
         <button mat-button>پسندیدن</button>
-        <button mat-button>اشتراک گذاری</button>
+        <button >خرید استراتژی</button>
         <span class="flex-spacer"></span>
-        <button mat-button [routerLink]="['/marketdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
-        -->
+        <button mat-button [routerLink]="['/shopdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
       </mat-card-actions>
     </mat-card>
   </div>
 
-
-
-  <div fxFlex="40" *ngIf="market" [@visibility]="visibility" [@expand]>
+  <div fxFlex="40" *ngIf="shop" [@visibility]="visibility" [@expand]>
     <mat-list>
       <mat-list-item>
         <h2> توضیحات </h2>        
       </mat-list-item>
-      <mat-list-item *ngFor="let comment of market.comments">
+      <mat-list-item *ngFor="let comment of shop.comments">
         <p mat-line>
           <span> {{comment.comment}} </span>
         </p>
@@ -72,11 +61,9 @@ dir="rtl">
         <p mat-line>
           <span> -- {{comment.author}}</span>
         </p>
+
       </mat-list-item>
     </mat-list>
-
-
-
 
     <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
         <h3 mat-line>
@@ -110,14 +97,17 @@ dir="rtl">
         </mat-form-field>
       </p>
       <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">ارسال</button>
+
     </form>
   </div>
-  <div [hidden]="market || errMess">
+  <div [hidden]="shop || errMess">
     <mat-spinner></mat-spinner><h4>در حال بارگذاری ... </h4>
   </div>
   <div *ngIf="errMess">
     <h2>Error</h2>
     <h4>{{errMess}}</h4>
   </div>
+
+
 
 </div>

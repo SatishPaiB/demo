@@ -2,17 +2,17 @@
   "markets": [
     {
       "id": 0,
-      "name": "plan1",
-      "image": "images/plan1.png",
+      "name": "s1",
+      "image": "images/s1.png",
       "category": "mains",
       "label": "Hot",
       "price": "4.99",
       "featured": "true",
-      "description": "پلن اول سرمایه گذاری",
+      "description": "",
       "comments": [
         {
           "rating": 5,
-          "comment": "این توضیحات پلن اول سرمایه گذاری میباشد",
+          "comment": "این توضیحات استراتژی اول میباشد",
           "author": "John Lemon",
           "date": "2012-10-16T17:57:28.556094Z"
          }
@@ -20,17 +20,17 @@
     },
     {
       "id": 1,
-      "name": "plan2",
-      "image": "images/plan2.png",
+      "name": "s2",
+      "image": "images/s2.png",
       "category": "appetizer",
       "label": "",
       "price": "1.99",
       "featured": "false",
-      "description": "پلن دوم سرمایه گذاری",
+      "description": "",
       "comments": [
         {
           "rating": 5,
-          "comment": "این توضیحات پلن دوم سرمایه گذاری میباشد",
+          "comment": "این توضیحات استراتژی دوم  میباشد",
           "author": "John Lemon",
           "date": "2012-10-16T17:57:28.556094Z"
         }
@@ -38,17 +38,17 @@
     },
     {
       "id": 2,
-      "name": "plan3",
-      "image": "images/plan3.png",
+      "name": "s3",
+      "image": "images/s3.png",
       "category": "appetizer",
       "label": "New",
       "price": "1.99",
       "featured": "false",
-      "description": "پلن سوم سرمایه گذاری",
+      "description": "",
       "comments": [
         {
           "rating": 5,
-          "comment": "این توضیحات پلن سوم سرمایه گذاری میباشد",
+          "comment": "این توضیحات استراتژی سوم میباشد",
           "author": "John Lemon",
           "date": "2012-10-16T17:57:28.556094Z"
         }
@@ -56,13 +56,89 @@
     },
     {
       "id": 3,
-      "name": "plan4",
-      "image": "images/plan4.png",
+      "name": "s4",
+      "image": "images/s4.png",
       "category": "dessert",
       "label": "",
       "price": "2.99",
       "featured": "false",
-      "description": "پلن چهارم سرمایه گذاری",
+      "description": "",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "این توضیحات استراتژی چهارم میباشد",
+          "author": "John Lemon",
+          "date": "2012-10-16T17:57:28.556094Z"
+        }
+      ]
+    }
+  ],
+
+
+  "shops": [
+    {
+      "id": 0,
+      "name": "news1",
+      "image": "images/news1.png",
+      "category": "mains",
+      "label": "Hot",
+      "price": "4.99",
+      "featured": "true",
+      "description": "",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "این توضیحات خبر اول میباشد",
+          "author": "John Lemon",
+          "date": "2012-10-16T17:57:28.556094Z"
+         }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "news2",
+      "image": "images/news2.png",
+      "category": "appetizer",
+      "label": "",
+      "price": "1.99",
+      "featured": "false",
+      "description": "",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "این توضیحات خبر دوم  میباشد",
+          "author": "John Lemon",
+          "date": "2012-10-16T17:57:28.556094Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "news3",
+      "image": "images/news3.png",
+      "category": "appetizer",
+      "label": "New",
+      "price": "1.99",
+      "featured": "false",
+      "description": "",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "این توضیحات خبر سوم میباشد",
+          "author": "John Lemon",
+          "date": "2012-10-16T17:57:28.556094Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "news4",
+      "image": "images/news4.png",
+      "category": "dessert",
+      "label": "",
+      "price": "2.99",
+      "featured": "false",
+      "comment": "این توضیحات خبر چهارم میباشد",
       "comments": [
         {
           "rating": 5,
@@ -73,10 +149,63 @@
       ]
     }
   ],
-
-
-
   
+  "homes": [
+    {
+      "id": 0,
+      "name": "stock",
+      "image": "images/stock.png",
+      "category": "mains",
+      "label": "Hot",
+      "price": "4.99",
+      "featured": "true",
+      "description": "",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "این توضیحات بورس اوراق میباشد",
+          "author": "John Lemon",
+          "date": "2012-10-16T17:57:28.556094Z"
+         }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "ati",
+      "image": "images/commodity.png",
+      "category": "appetizer",
+      "label": "",
+      "price": "1.99",
+      "featured": "false",
+      "description": "",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "این توضیحات بورس کالا و آتی  میباشد",
+          "author": "John Lemon",
+          "date": "2012-10-16T17:57:28.556094Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "crypto",
+      "image": "images/crypto.png",
+      "category": "appetizer",
+      "label": "New",
+      "price": "1.99",
+      "featured": "false",
+      "description": "",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "این توضیحات بورس ارزهای دیجیتال میباشد",
+          "author": "John Lemon",
+          "date": "2012-10-16T17:57:28.556094Z"
+        }
+      ]
+    }
+  ],
 
   "plans": [
     {

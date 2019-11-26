@@ -5,7 +5,8 @@ dir="rtl">
 
   <div fxFlex>
     <div>
-    <h3>شما میتوانید با مطالعه و انتخاب هر یک از پلن های زیر، مناسب ترین گزینه برای خود را انتخاب نمایید</h3>
+      <!--<h3>شما میتوانید با مطالعه و انتخاب هر یک از پلن های زیر، مناسب ترین گزینه برای خود را انتخاب نمایید</h3>-->
+      <h3>استراتژی مورد نظر خود را انتخاب نموده و بر روی داده های پیشین بازار تست نمایید</h3>
     <hr>
     </div>
   </div>
@@ -15,7 +16,7 @@ dir="rtl">
     <mat-grid-tile *ngFor="let market of markets" [routerLink]="['/marketdetail', market.id]" appHighlight>
       <img height="200px" src="{{BaseURL + market.image}}" alt={{market.name}}>
       <mat-grid-tile-footer>
-        <h1 mat-line>{{market.name | uppercase}}</h1>
+        <!--<h1 mat-line>{{market.name | uppercase}}</h1>-->
       </mat-grid-tile-footer>
     </mat-grid-tile>
     </mat-grid-list>

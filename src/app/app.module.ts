@@ -14,6 +14,9 @@ import { RestangularModule, Restangular } from 'ngx-restangular';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { MarketDetailComponent } from './marketdetail/marketdetail.component';
+import { ShopDetailComponent } from './shopdetail/shopdetail.component';
+import { HomeDetailComponent } from './homedetail/homedetail.component';
+
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
@@ -24,6 +27,8 @@ import { FlowComponent } from './flow/flow.component';
 
 import { MarketService } from './services/market.service';
 import { PlanService } from './services/plan.service';
+import { ShopService } from './services/shop.service';
+import { HomeService } from './services/home.service';
 
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
@@ -41,6 +46,7 @@ import { TradingviewComponent } from './tradingview/tradingview.component';
 import { NewsComponent } from './news/news.component';
 import { ShopComponent } from './shop/shop.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +63,9 @@ import { ShopComponent } from './shop/shop.component';
     PlandetailComponent,
     TradingviewComponent,
     NewsComponent,
-    ShopComponent
+    ShopComponent,
+    ShopDetailComponent,
+    HomeDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -84,6 +92,8 @@ import { ShopComponent } from './shop/shop.component';
   ],
   providers: [
     MarketService,
+    ShopService,
+    HomeService,
     PlanService,
     PromotionService,
     LeaderService,

@@ -52,11 +52,11 @@ export class HomeComponent implements OnInit {
 
 }
 
-*/
+
 
 import { Component, OnInit, Inject } from '@angular/core';
-import { Plan } from '../shared/plan';
-import { PlanService } from '../services/plan.service';
+import { Home } from '../shared/home';
+import { HomeService } from '../services/home.service';
 import { flyInOut, expand } from '../animations/app.animation';
 
 @Component({
@@ -74,15 +74,51 @@ import { flyInOut, expand } from '../animations/app.animation';
 })
 export class HomeComponent implements OnInit {
 
-  plans: Plan[];
+  homes: Home[];
   errMess: string;
 
-  constructor(private planService: PlanService,
+  constructor(private homeService: HomeService,
     @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
-    this.planService.getPlans()
-    .subscribe(plans => this.plans = plans,
+    this.homeService.getHomes()
+    .subscribe(homes => this.homes = homes,
+      errmess => this.errMess = <any>errmess);
+  }
+
+}
+
+*/
+
+import { Component, OnInit, Inject } from '@angular/core';
+import { Home } from '../shared/home';
+import { HomeService } from '../services/home.service';
+import { flyInOut, expand } from '../animations/app.animation';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+  },
+  animations: [
+    flyInOut(),
+    expand()
+  ]
+})
+export class HomeComponent implements OnInit {
+
+  homes: Home[];
+  errMess: string;
+
+  constructor(private homeService: HomeService,
+    @Inject('BaseURL') private BaseURL) { }
+
+  ngOnInit() {
+    this.homeService.getHomes()
+    .subscribe(homes => this.homes = homes,
       errmess => this.errMess = <any>errmess);
   }
 
