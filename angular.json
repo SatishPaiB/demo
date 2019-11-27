@@ -28,16 +28,15 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": [
-
-             "js/jquery.min.js",
-             "js/jquery-ui.min.js",
-             "js/jquery.panzoom.min.js",
-             "js/jquery.mousewheel.min.js",
-             "js/jquery.flowchart.min.js"
-
+              "js/jquery.min.js",
+              "js/jquery-ui.min.js",
+              "js/jquery.panzoom.min.js",
+              "js/jquery.mousewheel.min.js",
+              "js/jquery.flowchart.min.js"
             ]
           },
           "configurations": {
@@ -96,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -127,6 +127,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "demo"
 }

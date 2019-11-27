@@ -14,8 +14,19 @@ declare const TradingView: any;
 export class TradingviewComponent implements OnInit, AfterViewInit {
 
   constructor() { }
-
+  searchText : string;
+  course : any;
   ngOnInit() {
+    this.course = [
+      { id: 1, name: 'HTML' },
+      { id: 2, name: 'CSS' },
+      { id: 3, name: 'JAVASCRIPT' },
+      { id: 4, name: 'ANGULAR' },
+      { id: 5, name: 'REACT' },
+      { id: 6, name: 'NODEJS' },
+      { id: 7, name: 'PHP' },
+      { id: 8, name: 'MYSQL' }
+    ]
   }
 
   ngAfterViewInit(){

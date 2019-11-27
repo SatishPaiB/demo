@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { MatToolbarModule, MatListModule, MatGridListModule, MatButtonModule, MatCardModule,
   MatDialogModule, MatCheckboxModule, MatFormFieldModule, MatInputModule,
-  MatSelectModule, MatSlideToggleModule, MatProgressSpinnerModule, MatSliderModule } from '@angular/material'; 
+  MatSelectModule, MatSlideToggleModule, MatProgressSpinnerModule, MatSliderModule, MatIconModule  } from '@angular/material'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
@@ -88,6 +88,7 @@ import { ShopComponent } from './shop/shop.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
     RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [
