@@ -64,6 +64,41 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .flowchart-container {
     position: relative;
     overflow: hidden;
@@ -235,6 +270,15 @@ body {
     color: white;
 }
 
+.myTest3{
+    background-color: #2e4692;;
+    color: white;
+}
+
+.myTest4{
+    background-color: #8d0f15;;
+    color: white;
+}
 
 
 

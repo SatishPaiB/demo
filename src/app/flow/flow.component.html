@@ -5,14 +5,14 @@
   </div>
 
 
-
+<input type="button" value="add input" (click)="addNewOperator3()">
 <input type="button" value="add operator" (click)="addNewOperator()">
 <input type="button" value="add operator2" (click)="addNewOperator2()">
+<input type="button" value="add output" (click)="addNewOperator4()">
+
 <input type="button" value="delete" (click)="deleteOperationOrLink()">
 <input type="button" value="load" (click)="load()">
 <input type="button" value="get" (click)="get()">
-<!--<input type="button" value="browse" (click)="">-->
-
 <br />
 <textarea nbInput fullWidth shape="round" name="diagModel" [(ngModel)]="diagModel" placeholder="model"
   style="height: 300px; width: 500px"></textarea>
