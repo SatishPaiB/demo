@@ -1,20 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 
-$lt-gray: #ddd;
-$background-dark: rgb(153, 149, 212);
-$background-light: rgb(70, 155, 204);
-$background-pale: rgb(53, 158, 184);
+$lt-gray: rgba(221, 221, 221, 0);
+$background-dark: rgb(149, 158, 212);
+$background-light: rgb(70, 101, 204);
+$background-pale: rgb(53, 105, 184);
 $primary-color-dark:   rgb(10, 56, 156);
-$primary-color:        rgb(46, 124, 160);
+$primary-color:        rgb(46, 82, 160);
 $primary-color-light:  rgb(26, 6, 63);
-$primary-color-text:   #FFFFFF;
+$primary-color-text:   rgb(44, 6, 6);
 $accent-color:         #FFC107;
 $primary-text-color:   #212121;
-$secondary-text-color: #757575;
-$divider-color:        #BDBDBD;
+$secondary-text-color: #1d0606;
+$divider-color:        rgb(31, 7, 7);
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
     margin: 0px auto;

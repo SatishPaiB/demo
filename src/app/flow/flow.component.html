@@ -2,17 +2,46 @@
     <!-- <pan-zoom [config]="panzoomConfig"> -->
     <div class="flowchart-example-container" id="exampleDiv" #exampleDiv></div>
     <!-- </pan-zoom> -->
-  </div>
+</div>
 
+<div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>Login</h1>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <button type="submit" class="btn">Login</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+</div>
+<script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
 
-<input type="button" value="add input" (click)="addNewOperator3()">
-<input type="button" value="add operator" (click)="addNewOperator()">
-<input type="button" value="add operator2" (click)="addNewOperator2()">
-<input type="button" value="add output" (click)="addNewOperator4()">
 
 <input type="button" value="delete" (click)="deleteOperationOrLink()">
 <input type="button" value="load" (click)="load()">
 <input type="button" value="get" (click)="get()">
-<br />
-<textarea nbInput fullWidth shape="round" name="diagModel" [(ngModel)]="diagModel" placeholder="model"
+
+
+<br>
+
+<div class="disp">
+<textarea nbInput  shape="round" name="diagModel" [(ngModel)]="diagModel" placeholder="model"
   style="height: 300px; width: 500px"></textarea>
+
+  <button md-button class="input_circle_icon" (click)="addNewOperator3()">ورودی</button>    
+  <button md-button class="output_circle_icon" (click)="addNewOperator4()" >خروجی</button>    
+  <button md-button class="myTest_icon" (click)="addNewOperator()">عملگر یک</button> 
+  <button md-button class="myTest2_icon" (click)="addNewOperator2()"> عملگر دو</button>    
+  </div>

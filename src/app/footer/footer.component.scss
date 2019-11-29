@@ -1,7 +1,9 @@
-$lt-gray: #ddd;
-$background-dark: rgba(122, 121, 214, 0.795);
-$background-light: rgb(247, 247, 247);
-$background-pale: rgb(46, 117, 165);
+$lt-gray: rgb(43, 7, 7);
+$background-dark: rgb(3, 4, 46);
+$background-light: rgb(204, 238, 12);
+$background-pale: rgb(4, 17, 41);
+$background-moredark:  rgb(164, 211, 36);
+
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
     margin: 0px auto;
@@ -13,9 +15,9 @@ $background-pale: rgb(46, 117, 165);
     @include zero-margin(20px, 0px);
 }
 
-.btn-facebook {color:#fff!important; background-color:#fff!important;}
-.btn-google-plus{color:#fff!important;background-color:#fff!important;}
-.btn-youtube{color:#fff!important;background-color:#fff!important;}
-.btn-linkedin{color:#fff!important;background-color:#fff!important;}
-.btn-twitter{color:#fff!important;background-color:#fff!important;}
-.btn-mail{color:#fff!important;background-color:#fff!important;}
+.btn-facebook {color:#fff!important; background-color:#3b5998!important;}
+.btn-google-plus{color:#fff!important;background-color:#dd4b39!important;}
+.btn-youtube{color:#fff!important;background-color:#ff4b39!important;}
+.btn-linkedin{color:#fff!important;background-color:#007bb6!important;}
+.btn-twitter{color:#fff!important;background-color:#55acee!important;}
+.btn-mail{color:#fff!important;background-color:#512DA8!important;}

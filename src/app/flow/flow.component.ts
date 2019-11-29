@@ -52,14 +52,14 @@ export class FlowComponent implements AfterViewInit {
 
 
     var container = $('#chart_container');
-    this.cx = $('#exampleDiv').width() / 2;
-    this.cy = $('#exampleDiv').height() / 2;
+    this.cx = $('#exampleDiv').width() /2;
+    this.cy = $('#exampleDiv').height() /2;
     $('#exampleDiv').panzoom({
     });
     $('#exampleDiv').panzoom('pan', -this.cx + container.width() / 2, -this.cy + container.height() / 2);
 
-    var possibleZooms = [0.5, 0.75, 1, 2, 3];
-    var currentZoom = 2;
+    var possibleZooms = [ 1, 1.5, 2 ];
+    var currentZoom = 1
     container.on('mousewheel.focal', function (e) {
       e.preventDefault();
       var delta = (e.delta || e.originalEvent.wheelDelta) || e.originalEvent.detail;
@@ -124,26 +124,22 @@ export class FlowComponent implements AfterViewInit {
       top: this.cx,
       left: this.cy,
       properties: {
-        title: 'Operator ' + (this.operatorI + 1),
+        title: 'عملگر یک ' , // + (this.operatorI + 1),
         class: 'myTest',
         inputs: {
           input_1: {
-            label: 'Input 1',
+            label: 'ورودی اول',
           },
           input_2: {
-            label: 'Input 2',
+            label: 'ورودی دوم',
           },
-          input_3: {
-            label: 'Input 3',
-          },
+
         },
         outputs: {
           output_1: {
-            label: 'Output 1',
+            label: 'خروجی',
           },
-          output_2: {
-            label: 'Output 2',
-          },
+
 
         }
       }
@@ -160,26 +156,22 @@ export class FlowComponent implements AfterViewInit {
       top: this.cx,
       left: this.cy,
       properties: {
-        title: 'Operator ' + (this.operatorI + 1),
+        title: ' عملگر دو ' , // + (this.operatorI + 1),
         class: 'myTest2',
         inputs: {
           input_1: {
-            label: 'Input 1',
+            label: 'ورودی اول',
           },
           input_2: {
-            label: 'Input 2',
+            label: 'ورودی دوم',
           },
-          input_3: {
-            label: 'Input 3',
-          },
+
         },
         outputs: {
           output_1: {
-            label: 'Output 1',
+            label: 'خروجی',
           },
-          output_2: {
-            label: 'Output 2',
-          },
+
         }
       }
     }
@@ -195,25 +187,14 @@ export class FlowComponent implements AfterViewInit {
       top: this.cx,
       left: this.cy,
       properties: {
-        title: 'Input ' ,
-        class: 'myTest3',
+        title: 'ورودی ' ,
+        class: ' input_circle',
         inputs: {
-          input_1: {
-            label: 'Input 1',
-          },
-          input_2: {
-            label: 'Input 2',
-          },
-          input_3: {
-            label: 'Input 3',
-          },
+
         },
         outputs: {
           output_1: {
-            label: 'Output 1',
-          },
-          output_2: {
-            label: 'Output 2',
+            label: ' ',
           },
 
         }
@@ -231,26 +212,16 @@ export class FlowComponent implements AfterViewInit {
       top: this.cx,
       left: this.cy,
       properties: {
-        title: 'Output',
-        class: 'myTest4',
+        title: 'خروجی',
+        class: ' output_circle',
         inputs: {
           input_1: {
-            label: 'Input 1',
+            label: ' ',
           },
-          input_2: {
-            label: 'Input 2',
-          },
-          input_3: {
-            label: 'Input 3',
-          },
+
+
         },
         outputs: {
-          output_1: {
-            label: 'Output 1',
-          },
-          output_2: {
-            label: 'Output 2',
-          },
 
         }
       }
