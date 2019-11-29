@@ -1,37 +1,36 @@
-<mat-toolbar mat-dialog-title color="primary">
-  Login
+<mat-toolbar mat-dialog-title color="primary" dir="rtl">
+  ورود به سایت
   <span class="flex-spacer"></span>
-  <button mat-button mat-dialog-close>&times;</button>
+  <!-- <button mat-button mat-dialog-close style="float: left;">&times;</button> -->
 </mat-toolbar>
-
+<!--
 <p>{{ user | json }}</p>
+-->
+<form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()" dir="rtl">
 
-<form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
-
-  <mat-dialog-content>
+  <mat-dialog-content dir="rtl">
     <p>
       <mat-form-field color="{{username.invalid && !username.pristine ? 'warn' : 'primary'}}">
-        <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username" #username="ngModel" required>
+        <input matInput placeholder="نام کاربری" type="text" [(ngModel)]="user.username" name="username" #username="ngModel" required>
         <mat-hint>
           <span [hidden]="username.pristine">
-          <span [hidden]="!username.errors?.required">username is required</span>
+          <span [hidden]="!username.errors?.required">لطفا نام کاربری خود را وارد نمایید</span>
           </span>
         </mat-hint>
       </mat-form-field>
       <mat-form-field color="{{password.invalid && !password.pristine ? 'warn' : 'primary'}}">
-        <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
+        <input matInput placeholder="رمز عبور" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
         <mat-hint>
           <span [hidden]="password.pristine">
-          <span [hidden]="!password.errors?.required">password is required</span>
+          <span [hidden]="!password.errors?.required">لطفا رمز عبور خود را وارد نمایید</span>
           </span>
         </mat-hint>
       </mat-form-field>
-      <mat-checkbox [(ngModel)]="user.remember" name="remember">Remember Me</mat-checkbox>
+      <mat-checkbox [(ngModel)]="user.remember" name="remember">به باد داشتن</mat-checkbox>
     </p>
   </mat-dialog-content>
-  <mat-dialog-actions>
-    <span class="flex-spacer"></span>
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="loginForm.form.invalid">Login</button>
+  <mat-dialog-actions dir="rtl">
+    <button type="submit" mat-button class="background-primary text-floral-white" style="position: center;" [disabled]="loginForm.form.invalid">ورود</button>
+    <button mat-button mat-dialog-close class="background-primary text-floral-white" style="position: center">بستن</button>
   </mat-dialog-actions>
 </form>
