@@ -218,6 +218,9 @@ export class FlowComponent implements AfterViewInit {
           input_1: {
             label: ' ',
           },
+          input_2: {
+            label: ' ',
+          },
 
 
         },
