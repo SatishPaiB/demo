@@ -1,8 +1,8 @@
-$lt-gray: rgb(43, 7, 7);
-$background-dark: rgb(3, 4, 46);
-$background-light: rgb(204, 238, 12);
+$lt-gray: white;
+$background-dark: white;
+$background-light: white;
 $background-pale: rgb(4, 17, 41);
-$background-moredark:  rgb(164, 211, 36);
+$background-moredark: gray;
 
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
@@ -13,11 +13,18 @@ $background-moredark:  rgb(164, 211, 36);
 .footer{
     background-color: $background-pale;
     @include zero-margin(20px, 0px);
+    color: whitesmoke;
+    font-size: medium;
 }
 
 .btn-facebook {color:#fff!important; background-color:#3b5998!important;}
-.btn-google-plus{color:#fff!important;background-color:#dd4b39!important;}
-.btn-youtube{color:#fff!important;background-color:#ff4b39!important;}
+.btn-google-plus{color:#fff!important;background-color:#ee6414!important;}
+.btn-youtube{color:#fff!important;background-color:#ff1500!important;}
 .btn-linkedin{color:#fff!important;background-color:#007bb6!important;}
 .btn-twitter{color:#fff!important;background-color:#55acee!important;}
 .btn-mail{color:#fff!important;background-color:#512DA8!important;}
+
+.active {
+    background: $background-moredark;
+    color:rgb(255, 170, 0);
+}
