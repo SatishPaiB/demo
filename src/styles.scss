@@ -6,9 +6,9 @@
 $lt-gray: rgba(221, 221, 221, 0);
 $background-dark: rgb(67, 77, 167);
 $background-light: rgb(70, 101, 204);
-$background-pale: rgb(53, 105, 184);
+$background-pale: rgb(26, 45, 73);
 $primary-color-dark:   rgb(10, 56, 156);
-$primary-color:        rgb(46, 82, 160);
+$primary-color:        rgb(25, 44, 83);
 $primary-color-light:  rgb(26, 6, 63);
 $primary-color-text:   rgb(44, 6, 6);
 $accent-color:         #FFC107;
@@ -56,5 +56,7 @@ body {
   transform: scale(1.01);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; color: black; font-size: larger;}
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
+
+html { background-color: rgb(207, 163, 74); }
