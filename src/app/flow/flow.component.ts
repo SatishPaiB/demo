@@ -60,6 +60,7 @@ export class FlowComponent implements AfterViewInit {
 
     var possibleZooms = [ 1, 1.5, 2 ];
     var currentZoom = 1
+
     container.on('mousewheel.focal', function (e) {
       e.preventDefault();
       var delta = (e.delta || e.originalEvent.wheelDelta) || e.originalEvent.detail;
@@ -128,10 +129,10 @@ export class FlowComponent implements AfterViewInit {
         class: 'myTest',
         inputs: {
           input_1: {
-            label: 'ورودی اول',
+            label: 'ورودی یک',
           },
           input_2: {
-            label: 'ورودی دوم',
+            label: 'ورودی دو',
           },
 
         },
@@ -160,10 +161,10 @@ export class FlowComponent implements AfterViewInit {
         class: 'myTest2',
         inputs: {
           input_1: {
-            label: 'ورودی اول',
+            label: 'ورودی یک',
           },
           input_2: {
-            label: 'ورودی دوم',
+            label: 'ورودی دو',
           },
 
         },
@@ -250,6 +251,8 @@ export class FlowComponent implements AfterViewInit {
     $(this.exampleDiv.nativeElement).flowchart('deleteSelected');
     var data = $(this.exampleDiv.nativeElement).flowchart('getData');
     this.diagModel = JSON.stringify(data, null, 2);
+
+
   }
 
 }

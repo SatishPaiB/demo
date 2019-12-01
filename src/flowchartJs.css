@@ -22,8 +22,8 @@ body {
   }
 
   #exampleDiv {
-    width: 2000px;
-    height: 2000px;
+    width: 1500px;
+    height: 1500px;
     background: white;
   }
   
@@ -64,8 +64,8 @@ body {
 
 
 .flowchart-container {
-    position: relative;
-    overflow: hidden;
+    position: absolute;
+    overflow: auto;
 }
 
 .flowchart-links-layer, .flowchart-operators-layer, .flowchart-temporary-link-layer {
@@ -168,7 +168,7 @@ body {
 /* Default Operator */
 
 .flowchart-operator {
-    position: absolute;
+    position: relative;
     width: 140px;
     border: 1px solid #CCCCCC;
     background: #FAFAFA;
@@ -250,16 +250,16 @@ body {
 
 
 .input_circle {
-    height: 75px;
-    width: 75px;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     background-color: #2e4692;;
     color: white;
     }
 
 .output_circle {
-    height: 75px;
-    width: 75px;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     background-color: #8d0f15;;
     color: white;
