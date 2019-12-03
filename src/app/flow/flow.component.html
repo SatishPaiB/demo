@@ -1,24 +1,28 @@
-<div id="chart_container" #chart_container>
+<div class="header">
+<div id="chart_container" #chart_container class="playerTwo">
     <!-- <pan-zoom [config]="panzoomConfig"> -->
     <div class="flowchart-example-container" id="exampleDiv" #exampleDiv></div>
     <!-- </pan-zoom> -->
 </div>
 
-<div class="form-popup" id="myForm">
-    <form action="/action_page.php" class="form-container">
-      <h1>Login</h1>
-  
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-  
-      <button type="submit" class="btn">Login</button>
-      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+<div class="form-popup playerOne" id="myForm" dir="rtl">
+    <form action="/action_page.php" class="form-container" formControlName="contacttype">  
+      <label for="funcs"><b>انتخاب تابع</b></label>
+
+      <mat-select placeholder="انتخاب اپراتور" formControlName="contacttype">
+          <mat-option *ngFor="let ctype of contactType" [value]="ctype">
+            {{ ctype }}
+          </mat-option>
+      </mat-select>
+
+        <button type="submit" class="btn " style="margin-top: 260px;" onclick="changeOperator()">اعمال</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">انصراف</button>
     </form>
 </div>
-<script>
+</div>
+
+
+<script  type="text/javascript">
     function openForm() {
       document.getElementById("myForm").style.display = "block";
     }
@@ -26,22 +30,42 @@
     function closeForm() {
       document.getElementById("myForm").style.display = "none";
     }
-  </script>
+
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
 
 
-<input type="button" value="delete" (click)="deleteOperationOrLink()">
+<input type="button" value="delete" (click)="deleteOperationOrLink()" style="margin-left:20px;">
 <input type="button" value="load" (click)="load()">
 <input type="button" value="get" (click)="get()">
 
-
 <br>
-
 <div class="disp">
 <textarea nbInput  shape="round" name="diagModel" [(ngModel)]="diagModel" placeholder="model"
-  style="height: 300px; width: 500px"></textarea>
+style="height: 300px; width: 500px; margin-left: 20px;"></textarea>
 
+<div class="palette">
   <button md-button class="input_circle_icon" (click)="addNewOperator3()">ورودی</button>    
   <button md-button class="output_circle_icon" (click)="addNewOperator4()" >خروجی</button>    
   <button md-button class="myTest_icon" (click)="addNewOperator()">عملگر یک</button> 
   <button md-button class="myTest2_icon" (click)="addNewOperator2()"> عملگر دو</button>    
   </div>
+</div>

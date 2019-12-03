@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 
 import { flyInOut, expand } from '../animations/app.animation';
+import { Feedback, ContactType } from '../shared/feedback';
 
 
 declare var $: any;
@@ -37,6 +38,7 @@ export class FlowComponent implements AfterViewInit {
   private cx: number;
   private cy: number;
 
+  contactType = ContactType;
 
 
   @ViewChild('exampleDiv',{static:true}) exampleDiv: ElementRef;
@@ -252,6 +254,11 @@ export class FlowComponent implements AfterViewInit {
     var data = $(this.exampleDiv.nativeElement).flowchart('getData');
     this.diagModel = JSON.stringify(data, null, 2);
 
+  }
+
+  changeOperator(){
+    //$element.text() = "sss";
+    //console.log(this.contactType.values);
 
   }
 

@@ -387,6 +387,7 @@ $(function() {
         },
         _removeSelectedClassOperators: function() {
             this.objs.layers.operators.find(".flowchart-operator").removeClass("selected")
+            
         },
         unselectOperator: function() {
             if (null != this.selectedOperatorId) {
@@ -396,7 +397,14 @@ $(function() {
         },
         _addSelectedClass: function(t) {
             this.data.operators[t].internal.els.operator.addClass("selected")
+            
         },
+
+        _openForm: function(){
+            document.getElementById("myForm").style.display = "block";
+
+        },
+
         callbackEvent: function(t, e) {
             var r = "on" + t.charAt(0).toUpperCase() + t.slice(1),
                 o = this.options[r].apply(this, e);
@@ -409,7 +417,7 @@ $(function() {
             return o
         },
         selectOperator: function(t) {
-            this.callbackEvent("operatorSelect", [t]) && (this.unselectLink(), this._removeSelectedClassOperators(), this._addSelectedClass(t), this.selectedOperatorId = t)
+            this.callbackEvent("operatorSelect", [t]) && (this.unselectLink(), this._removeSelectedClassOperators(), this._addSelectedClass(t), this._openForm(), this.selectedOperatorId = t)
         },
         addClassOperator: function(t, e) {
             this.data.operators[t].internal.els.operator.addClass(e)
