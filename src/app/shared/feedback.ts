@@ -4,8 +4,11 @@ export class Feedback {
     telnum: number;
     email: string;
     agree: boolean;
-    contacttype: string;
+    periods: string;
     message: string;
 };
 
-export const ContactType = ['انتخاب کنید', 'RSI', 'MACD', 'MFI'];
+export const Periods = ['انتخاب دوره', '6', '12', '26'];
+export const Inputs = ['انتخاب نماد', 'نماد یک', 'نماد دو', 'نماد سه'];
+
+export const ContactType = ['nothing'];

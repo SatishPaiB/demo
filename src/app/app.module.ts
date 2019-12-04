@@ -45,6 +45,7 @@ import { PlandetailComponent } from './plandetail/plandetail.component';
 import { TradingviewComponent } from './tradingview/tradingview.component';
 import { NewsComponent } from './news/news.component';
 import { ShopComponent } from './shop/shop.component';
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { ShopComponent } from './shop/shop.component';
     NewsComponent,
     ShopComponent,
     ShopDetailComponent,
-    HomeDetailComponent
+    HomeDetailComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

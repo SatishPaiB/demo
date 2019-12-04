@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 
 import { flyInOut, expand } from '../animations/app.animation';
-import { Feedback, ContactType } from '../shared/feedback';
+import { Feedback, Periods, Inputs } from '../shared/feedback';
 
 
 declare var $: any;
@@ -38,7 +38,8 @@ export class FlowComponent implements AfterViewInit {
   private cx: number;
   private cy: number;
 
-  contactType = ContactType;
+  periods = Periods;
+  inputs = Inputs;
 
 
   @ViewChild('exampleDiv',{static:true}) exampleDiv: ElementRef;
@@ -127,7 +128,7 @@ export class FlowComponent implements AfterViewInit {
       top: this.cx,
       left: this.cy,
       properties: {
-        title: 'عملگر یک ' , // + (this.operatorI + 1),
+        title: 'RSI' , // + (this.operatorI + 1),
         class: 'myTest',
         inputs: {
           input_1: {
@@ -159,7 +160,7 @@ export class FlowComponent implements AfterViewInit {
       top: this.cx,
       left: this.cy,
       properties: {
-        title: ' عملگر دو ' , // + (this.operatorI + 1),
+        title: 'MACD' , // + (this.operatorI + 1),
         class: 'myTest2',
         inputs: {
           input_1: {
@@ -190,7 +191,7 @@ export class FlowComponent implements AfterViewInit {
       top: this.cx,
       left: this.cy,
       properties: {
-        title: 'ورودی ' ,
+        title: 'ورودی' ,
         class: ' input_circle',
         inputs: {
 

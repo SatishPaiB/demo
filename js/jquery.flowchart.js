@@ -400,8 +400,25 @@ $(function() {
             
         },
 
-        _openForm: function(){
-            document.getElementById("myForm").style.display = "block";
+        _openForm: function(t){
+            if(this.data.operators[t].internal.properties.title == "RSI"){
+                document.getElementById("myForm_macd").style.display = "none";
+                document.getElementById("myForm_input").style.display = "none";
+                document.getElementById("myForm_rsi").style.display = "block";
+            }else if(this.data.operators[t].internal.properties.title == "MACD"){
+                document.getElementById("myForm_rsi").style.display = "none";
+                document.getElementById("myForm_input").style.display = "none";
+                document.getElementById("myForm_macd").style.display = "block";
+            }else if(this.data.operators[t].internal.properties.title == "ورودی"){
+                document.getElementById("myForm_rsi").style.display = "none";
+                document.getElementById("myForm_macd").style.display = "none";
+                document.getElementById("myForm_input").style.display = "block";
+            }else{
+                document.getElementById("myForm_rsi").style.display = "none";
+                document.getElementById("myForm_macd").style.display = "none";
+                document.getElementById("myForm_input").style.display = "none";
+
+            }
 
         },
 
@@ -417,7 +434,7 @@ $(function() {
             return o
         },
         selectOperator: function(t) {
-            this.callbackEvent("operatorSelect", [t]) && (this.unselectLink(), this._removeSelectedClassOperators(), this._addSelectedClass(t), this._openForm(), this.selectedOperatorId = t)
+            this.callbackEvent("operatorSelect", [t]) && (this.unselectLink(), this._removeSelectedClassOperators(), this._addSelectedClass(t), this._openForm(t), this.selectedOperatorId = t)
         },
         addClassOperator: function(t, e) {
             this.data.operators[t].internal.els.operator.addClass(e)

@@ -5,20 +5,58 @@
     <!-- </pan-zoom> -->
 </div>
 
-<div class="form-popup playerOne" id="myForm" dir="rtl">
+<div class="form-popup playerOne" id="myForm_input" dir="rtl">
     <form action="/action_page.php" class="form-container" formControlName="contacttype">  
-      <label for="funcs"><b>انتخاب تابع</b></label>
+      <label for="funcs"><b>انتخاب ورودی</b></label>
 
-      <mat-select placeholder="انتخاب اپراتور" formControlName="contacttype">
-          <mat-option *ngFor="let ctype of contactType" [value]="ctype">
-            {{ ctype }}
+      <mat-select placeholder="انتخاب ورودی" formControlName="contacttype">
+          <mat-option *ngFor="let input of inputs" [value]="input">
+            {{ input }}
           </mat-option>
       </mat-select>
 
-        <button type="submit" class="btn " style="margin-top: 260px;" onclick="changeOperator()">اعمال</button>
+        <button type="submit" class="btn " style="margin-top: 270px;" onclick="changeOperator()">اعمال</button>
         <button type="button" class="btn cancel" onclick="closeForm()">انصراف</button>
     </form>
 </div>
+
+<div class="form-popup playerOne" id="myForm_rsi" dir="rtl">
+    <form action="/action_page.php" class="form-container" formControlName="contacttype">  
+      <label for="funcs"><b>انتخاب دوره</b></label>
+
+      <mat-select placeholder="انتخاب دوره" formControlName="contacttype">
+          <mat-option *ngFor="let period of periods" [value]="period">
+            {{ period }}
+          </mat-option>
+      </mat-select>
+
+        <button type="submit" class="btn " style="margin-top: 270px;" onclick="changeOperator()">اعمال</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">انصراف</button>
+    </form>
+</div>
+
+<div class="form-popup playerOne" id="myForm_macd" dir="rtl">
+    <form action="/action_page.php" class="form-container" formControlName="contacttype">  
+      <label for="funcs"><b>انتخاب دوره اول</b></label>
+
+      <mat-select placeholder="انتخاب دوره اول" formControlName="contacttype">
+          <mat-option *ngFor="let period of periods" [value]="period">
+            {{ period }}
+          </mat-option>
+      </mat-select>
+      <label for="funcs"><b>انتخاب دوره دوم</b></label>
+
+      <mat-select placeholder="انتخاب دوره دوم" formControlName="contacttype">
+          <mat-option *ngFor="let period of periods" [value]="period">
+            {{ period }}
+          </mat-option>
+      </mat-select>
+
+        <button type="submit" class="btn " style="margin-top: 200px;" onclick="changeOperator()">اعمال</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">انصراف</button>
+    </form>
+</div>
+
 </div>
 
 
