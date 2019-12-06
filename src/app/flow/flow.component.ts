@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 
 import { flyInOut, expand } from '../animations/app.animation';
-import { Feedback, Periods, Inputs } from '../shared/feedback';
+import { Feedback, Periods, Inputs, Ifs, Results } from '../shared/feedback';
 
 
 declare var $: any;
@@ -40,6 +40,8 @@ export class FlowComponent implements AfterViewInit {
 
   periods = Periods;
   inputs = Inputs;
+  ifs = Ifs;
+  results = Results;
 
 
   @ViewChild('exampleDiv',{static:true}) exampleDiv: ElementRef;
@@ -192,7 +194,7 @@ export class FlowComponent implements AfterViewInit {
       left: this.cy,
       properties: {
         title: 'ورودی' ,
-        class: ' input_circle',
+        class: 'input_circle',
         inputs: {
 
         },
@@ -217,7 +219,7 @@ export class FlowComponent implements AfterViewInit {
       left: this.cy,
       properties: {
         title: 'خروجی',
-        class: ' output_circle',
+        class: 'output_circle',
         inputs: {
           input_1: {
             label: ' ',
@@ -230,6 +232,37 @@ export class FlowComponent implements AfterViewInit {
         },
         outputs: {
 
+        }
+      }
+    }
+
+    this.operatorI++;
+    $(this.exampleDiv.nativeElement).flowchart('createOperator', operatorId, operatorData);
+  }
+
+  addNewOperator5() {
+
+    var operatorId = 'created_operator_' + this.operatorI;
+    var operatorData = {
+      top: this.cx,
+      left: this.cy,
+      properties: {
+        title: 'IF',
+        class: 'if_triangle',
+        inputs: {
+          input_1: {
+            label: ' ',
+          },
+          input_2: {
+            label: ' ',
+          },
+
+
+        },
+        outputs: {
+          output_1: {
+            label: ' ',
+          },
         }
       }
     }
