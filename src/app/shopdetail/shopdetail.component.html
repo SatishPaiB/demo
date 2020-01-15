@@ -20,12 +20,11 @@ dir="rtl">
         </p>   
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button [routerLink]="['/shopdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
-        <button mat-button (click)="goBack()">بازگشت</button>
+        <button mat-button [routerLink]="['/shopdetail', prev]"><span class="fa fa-chevron-right fa-lg"></span></button>
         <button mat-button>پسندیدن</button>
-        <button >خرید استراتژی</button>
+        <button mat-button (click)="goBack()">بازگشت</button>
         <span class="flex-spacer"></span>
-        <button mat-button [routerLink]="['/shopdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
+        <button mat-button [routerLink]="['/shopdetail', next]"><span class="fa fa-chevron-left fa-lg"></span></button>
       </mat-card-actions>
     </mat-card>
   </div>
