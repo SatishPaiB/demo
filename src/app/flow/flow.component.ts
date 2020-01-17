@@ -22,6 +22,7 @@ import { NgxChartsComponent } from '../ngx-charts/ngx-charts.component';
 
 
 
+
 declare var $: any;
 
 var pricess: number[]; // = [1,2,3,4,5,6,7,8,9,10,12,13,15];
@@ -377,8 +378,6 @@ export class FlowComponent implements AfterViewInit {
     this.dialog.open(NgxChartsComponent ) ; //, {width: '500px', height: '500px'});
     
   }
-
-
 
 
 }

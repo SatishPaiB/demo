@@ -2,15 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material';
 
 import {MACD_RESULT , RSI_RESULT} from '../flow/flow.component';
+import {Mellat, Khodro, Shepna} from '../shared/stock_inf';
+import { NewsComponent } from '../news/news.component';
+
 
 @Component({
   selector: 'app-ngx-charts',
   templateUrl: './ngx-charts.component.html',
   styleUrls: ['./ngx-charts.component.scss']
 })
+
+
+
 export class NgxChartsComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<NgxChartsComponent>) { }
+
+
 
   // data goes here
 public single = [
@@ -25,50 +33,40 @@ public single = [
   
 ];
 
-public multi = [
+
+mellat = Mellat;
+khodro = Khodro;
+shepna = Shepna;
+
+ macd_result = MACD_RESULT;
+ rsi_result = RSI_RESULT;
+// LENGTH = RSI_RESULT.length;
+ newArray = RSI_RESULT.map((e, i) => ({
+  name: (i + 1).toString(),
+  "value": e,
+}));
+
+
+public mmulti = [
   {
-    "name": "Germany",
-    "series": [
-      {
-        "name": "2010",
-        "value": 7300000
-      },
-      {
-        "name": "2011",
-        "value": 8940000
-      }
-    ]
+    "name": "Mellat",
+    "series": this.newArray
   },
 
   {
-    "name": "USA",
-    "series": [
-      {
-        "name": "2010",
-        "value": 7870000
-      },
-      {
-        "name": "2011",
-        "value": 8270000
-      }
-    ]
+    "name": "Khodro",
+    "series": this.newArray
   },
 
   {
-    "name": "France",
-    "series": [
-      {
-        "name": "2010",
-        "value": 5000002
-      },
-      {
-        "name": "2011",
-        "value": 5800000
-      }
-    ]
+    "name": "Shepna",
+    "series": this.newArray
   }
 ];
 
+//{name: (i + 1).toString(), value: e.toString()}
+
+ 
 
   view: any[] = [700, 400];
 
@@ -96,8 +94,12 @@ public multi = [
   doughnut = false;
 
   ngOnInit() {
+    console.log(this.newArray);
 
   }
 }
+
+
+
 
 
