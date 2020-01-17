@@ -12,9 +12,23 @@ import {
 
 import { flyInOut, expand } from '../animations/app.animation';
 import { Feedback, Periods, Inputs, Ifs, Results } from '../shared/feedback';
+import {Mellat , Khodro, Shepna} from '../shared/stock_inf';
+
+import { sma, rsi, RSI } from 'technicalindicators';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { NgxChartsComponent } from '../ngx-charts/ngx-charts.component';
+
 
 
 declare var $: any;
+
+var pricess: number[]; // = [1,2,3,4,5,6,7,8,9,10,12,13,15];
+var periodd: number;
+var macd_result: number[];
+var rsi_result: number[];
+
 
 
 @Component({
@@ -42,13 +56,21 @@ export class FlowComponent implements AfterViewInit {
   inputs = Inputs;
   ifs = Ifs;
   results = Results;
+  mellat = Mellat;
+  khodro = Khodro;
+  shepna = Shepna;
+
+  label1 = '';
+  label2 = '';
+  label3 = '';
+  label4 = '';
 
 
   @ViewChild('exampleDiv',{static:true}) exampleDiv: ElementRef;
 
 
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
   }
 
 
@@ -294,7 +316,72 @@ export class FlowComponent implements AfterViewInit {
     //$element.text() = "sss";
     //console.log(this.contactType.values);
 
+
   }
+
+
+//macd_p1;
+//macd_p2;
+
+
+
+
+  setInput(selectedValue){
+    console.log('The selected input is:' , selectedValue);
+    switch(selectedValue){
+      case 'وبملت':
+        pricess = this.mellat;
+        this.label1 = 'نام سهام: بانک ملت';
+        break;
+      case 'خودرو':
+        pricess = this.khodro;
+        this.label1 = 'نام سهام: ایران خودرو ';
+        break;
+      case 'شپنا':
+        pricess = this.shepna;
+        this.label1 = 'نام سهام: پالایش نفت اصفهان ';
+        break;
+      default: 
+        break;
+
+    }
+  }
+
+  setRsi(selectedValue){
+    console.log('The RSI period is:' , selectedValue);
+    periodd = selectedValue;
+    this.label2 = ' نام اندیکاتور:  RSI';
+    this.label3 = ' دوره زمانی: ' + periodd + 'روزه';
+    rsi_result = rsi({period: periodd, values: pricess});
+    console.log('The RSI result is:' ,  rsi_result);
+  }
+
+  setMacd(selectedValue1, selectedValue2){
+    console.log('The MACD period one is:' , selectedValue1);
+    console.log('The MACD period two is:' , selectedValue2);
+    this.label2 = 'نام اندیکاتور:  MACD';
+    periodd  = selectedValue1;
+    this.label3 = ' دوره زمانی: ' + periodd + ' روزه';
+    //this.macd_p2 = selectedValue2;
+    this.doMacd(periodd, pricess);
+  }
+
+
+
+  doMacd(periodd , pricess){
+    macd_result = sma({period: periodd, values: pricess});
+    console.log('sma result is:' , macd_result );
+  }
+
+  doOutput(){
+    this.dialog.open(NgxChartsComponent ) ; //, {width: '500px', height: '500px'});
+    
+  }
+
+
+
 
 }
 
+export const RSI_RESULT = rsi_result;
+export const MACD_RESULT = macd_result;

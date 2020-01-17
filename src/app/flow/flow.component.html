@@ -9,28 +9,41 @@
     <form action="/action_page.php" class="form-container">  
       <label for="funcs"><b>انتخاب ورودی</b></label>
 
-      <mat-select placeholder="انتخاب ورودی" >
+      <mat-select placeholder="انتخاب ورودی" [(ngModel)] = "selectedValue" name="input">
           <mat-option *ngFor="let input of inputs" [value]="input">
             {{ input }}
           </mat-option>
       </mat-select>
 
-        <button type="submit" class="btn " style="margin-top: 270px;" onclick="changeOperator()">اعمال</button>
+        <button type="submit" class="btn " style="margin-top: 270px;" (click)="setInput(selectedValue)">اعمال</button>
         <button type="button" class="btn cancel" onclick="closeForm()">انصراف</button>
     </form>
+</div>
+
+<div class="form-popup playerOne" id="myForm_output" dir="rtl" style="width: 270px;">
+  <form action="/action_page.php" class="form-container">  
+    <label id="l1"><b><br> {{label1}}  </b></label>
+    <label id="l2"><b><br> {{label2}} </b></label>
+    <label id="l3"><b><br> {{label3}} </b></label>
+    <label id="l4"><b><br> {{label4}} </b></label>
+
+
+    <button type="submit" class="btn " style="margin-top:220px;" (click)="doOutput()">اعمال</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">انصراف</button> 
+  </form>
 </div>
 
 <div class="form-popup playerOne" id="myForm_rsi" dir="rtl">
     <form action="/action_page.php" class="form-container" >  
       <label for="funcs"><b>انتخاب دوره</b></label>
 
-      <mat-select placeholder="انتخاب دوره" >
+      <mat-select placeholder="انتخاب دوره" [(ngModel)] = "selectedValue" name="rsi">
           <mat-option *ngFor="let period of periods" [value]="period">
             {{ period }}
           </mat-option>
       </mat-select>
 
-        <button type="submit" class="btn " style="margin-top: 270px;" onclick="changeOperator()">اعمال</button>
+        <button type="submit" class="btn " style="margin-top: 270px;" (click)="setRsi(selectedValue)">اعمال</button>
         <button type="button" class="btn cancel" onclick="closeForm()">انصراف</button>
     </form>
 </div>
@@ -39,20 +52,20 @@
     <form action="/action_page.php" class="form-container" >  
       <label for="funcs"><b>انتخاب دوره اول</b></label>
 
-      <mat-select placeholder="انتخاب دوره اول" >
+      <mat-select placeholder="انتخاب دوره اول" [(ngModel)] = "selectedValue_1" name="macd1">
           <mat-option *ngFor="let period of periods" [value]="period">
             {{ period }}
           </mat-option>
       </mat-select>
       <label for="funcs"><b>انتخاب دوره دوم</b></label>
 
-      <mat-select placeholder="انتخاب دوره دوم" >
+      <mat-select placeholder="انتخاب دوره دوم" [(ngModel)] = "selectedValue_2" name="macd2">
           <mat-option *ngFor="let period of periods" [value]="period">
             {{ period }}
           </mat-option>
       </mat-select>
 
-        <button type="submit" class="btn " style="margin-top: 200px;" onclick="changeOperator()">اعمال</button>
+        <button type="submit" class="btn " style="margin-top: 200px;" (click)="setMacd(selectedValue_1, selectedValue_2)">اعمال</button>
         <button type="button" class="btn cancel" onclick="closeForm()">انصراف</button>
     </form>
 </div>
@@ -124,9 +137,9 @@ style="height: 300px; width: 500px; margin-left: 20px;"></textarea>
 
 <div class="palette">
   <button md-button class="input_circle_icon" (click)="addNewOperator3()">ورودی</button>    
-  <button md-button class="output_circle_icon" (click)="addNewOperator4()" >خروجی</button>    
-  <button md-button class="myTest_icon" (click)="addNewOperator()">عملگر یک</button> 
-  <button md-button class="myTest2_icon" (click)="addNewOperator2()"> عملگر دو</button>  
+  <button md-button class="output_circle_icon" (click)="addNewOperator4()">خروجی</button>    
+  <button md-button class="myTest_icon" (click)="addNewOperator()">RSI</button> 
+  <button md-button class="myTest2_icon" (click)="addNewOperator2()">MACD</button>  
   <button md-button class="if_triangle_icon" (click)="addNewOperator5()">شرط</button>    
   
   </div>

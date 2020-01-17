@@ -46,6 +46,8 @@ import { TradingviewComponent } from './tradingview/tradingview.component';
 import { NewsComponent } from './news/news.component';
 import { ShopComponent } from './shop/shop.component';
 import { FormComponent } from './form/form.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgxChartsComponent } from './ngx-charts/ngx-charts.component';
 
 
 @NgModule({
@@ -67,7 +69,8 @@ import { FormComponent } from './form/form.component';
     ShopComponent,
     ShopDetailComponent,
     HomeDetailComponent,
-    FormComponent
+    FormComponent,
+    NgxChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +94,7 @@ import { FormComponent } from './form/form.component';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    NgxChartsModule,
     RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [
@@ -105,7 +109,8 @@ import { FormComponent } from './form/form.component';
     {provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [
-    LoginComponent
+    LoginComponent,
+    NgxChartsComponent
   ],
   bootstrap: [AppComponent]
 })

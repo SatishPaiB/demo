@@ -405,26 +405,37 @@ $(function() {
                 document.getElementById("myForm_macd").style.display = "none";
                 document.getElementById("myForm_input").style.display = "none";
                 document.getElementById("myForm_if").style.display = "none";
+                document.getElementById("myForm_output").style.display = "none";
                 document.getElementById("myForm_rsi").style.display = "block";
             }else if(this.data.operators[t].internal.properties.title == "MACD"){
                 document.getElementById("myForm_rsi").style.display = "none";
                 document.getElementById("myForm_input").style.display = "none";
                 document.getElementById("myForm_if").style.display = "none";
+                document.getElementById("myForm_output").style.display = "none";
                 document.getElementById("myForm_macd").style.display = "block";
             }else if(this.data.operators[t].internal.properties.title == "ورودی"){
                 document.getElementById("myForm_rsi").style.display = "none";
                 document.getElementById("myForm_macd").style.display = "none";
                 document.getElementById("myForm_if").style.display = "none";
+                document.getElementById("myForm_output").style.display = "none";
                 document.getElementById("myForm_input").style.display = "block";
+            }else if(this.data.operators[t].internal.properties.title == "خروجی"){
+                document.getElementById("myForm_rsi").style.display = "none";
+                document.getElementById("myForm_macd").style.display = "none";
+                document.getElementById("myForm_if").style.display = "none";
+                document.getElementById("myForm_input").style.display = "none";
+                document.getElementById("myForm_output").style.display = "block";
             }else if(this.data.operators[t].internal.properties.title == "IF"){
                 document.getElementById("myForm_rsi").style.display = "none";
                 document.getElementById("myForm_macd").style.display = "none";
                 document.getElementById("myForm_input").style.display = "none";
+                document.getElementById("myForm_output").style.display = "none";
                 document.getElementById("myForm_if").style.display = "block";
             }else{
                 document.getElementById("myForm_rsi").style.display = "none";
                 document.getElementById("myForm_macd").style.display = "none";
                 document.getElementById("myForm_input").style.display = "none";
+                document.getElementById("myForm_output").style.display = "none";
                 document.getElementById("myForm_if").style.display = "none";
             }
 

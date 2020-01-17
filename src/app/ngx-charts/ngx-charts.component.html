@@ -1,0 +1,41 @@
+<!-- The chart type goes in here -->
+<div> نمایش نتایج حاصل از اعمال استراتژی</div>
+<div style="display: inline-block; direction: rtl;">
+    <ngx-charts-line-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="multi"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [autoScale]="autoScale"
+      [timeline]="timeline"
+      (select)="onSelect($event)">
+    </ngx-charts-line-chart>
+  </div>
+
+
+    <br>
+    <div> نتیجه ی سیگنالهای معاملاتی و سود و زیان</div>
+
+    <div style="display: inline-block; direction: rtl;">
+    <ngx-charts-pie-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="single"
+    [legend]="showLegend"
+    [explodeSlices]="explodeSlices"
+    [labels]="showLabels"
+    [doughnut]="doughnut"
+    [gradient]="gradient"
+    (select)="onSelect($event)">
+  </ngx-charts-pie-chart>
+</div>
+
+
+

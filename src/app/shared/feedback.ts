@@ -9,7 +9,7 @@ export class Feedback {
 };
 
 export const Periods = ['انتخاب دوره', '6', '12', '26'];
-export const Inputs = ['انتخاب نماد', 'نماد یک', 'نماد دو', 'نماد سه'];
+export const Inputs = ['انتخاب نماد', 'وبملت', 'خودرو', 'شپنا'];
 export const Ifs = ['انتخاب شرط', 'قطع از بالا', 'قطع از پایین','هیچکدام' ];
 export const Results = ['انتخاب نتیجه', 'سیگنال خرید', 'سیگنال فروش', 'ارسال نتیجه' ];
 
